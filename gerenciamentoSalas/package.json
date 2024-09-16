@@ -9,7 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@fortawesome/fontawesome-free": "^6.6.0",
+=======
+>>>>>>> c84fa61 (chore: add package.json to repository)
     "axios": "^1.7.7",
     "vue": "^3.4.21",
     "vue-router": "^4.4.5"
