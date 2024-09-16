@@ -12,7 +12,7 @@
       <label for="quantidade">Quantidade:</label>
       <input v-model="recurso.quantidade" id="quantidade" type="number" required min="1" />
     </div>
-    <button type="submit">Adicionar Recurso</button>
+    <button type="submit">{{ recursoAtual ? 'Salvar Alterações' : 'Adicionar Recurso' }}</button>
   </form>
 </template>
 
@@ -23,15 +23,24 @@ export default {
       type: Function,
       required: true,
     },
+    recursoAtual: {
+      type: Object,
+      default: null,
+    },
   },
   data() {
     return {
-      recurso: {
-        nome: '',
-        descricao: '',
-        quantidade: null,
-      },
+      recurso: this.recursoAtual
+        ? { ...this.recursoAtual }
+        : { nome: '', descricao: '', quantidade: null },
     };
+  },
+  watch: {
+    recursoAtual(newRecurso) {
+      if (newRecurso) {
+        this.recurso = { ...newRecurso };
+      }
+    },
   },
   methods: {
     submitRecurso() {
@@ -45,7 +54,7 @@ export default {
 </script>
 
 <style scoped>
-/* Estilização do formulário (mantendo as mesmas regras anteriores) */
+/* Estilização do formulário */
 .form-adicionar-recurso {
   margin-bottom: 30px;
   padding: 15px;
