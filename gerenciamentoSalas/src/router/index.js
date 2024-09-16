@@ -6,6 +6,7 @@ import Adicionar from '../views/Adicionar.vue';
 import RecursoAdicional from '../views/RecursoAdicional.vue';
 import Salas from '../views/Salas.vue';
 import Laboratorios from '../views/Laboratorios.vue';
+import Reserva from '../views/Reserva.vue';
 
 const routes = [
     { 
@@ -37,6 +38,11 @@ const routes = [
         path: '/laboratorios',
         name: 'Laboratorios',
         component: Laboratorios
+    },
+    {
+        path: '/reserva',
+        name: 'Reserva',
+        component: Reserva
     },
     {
         path: '/',
