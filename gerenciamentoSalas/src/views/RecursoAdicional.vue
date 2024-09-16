@@ -1,6 +1,11 @@
 <template>
   <div class="recurso-adicional-container">
     <h1>Recursos Adicionais</h1>
+
+    <!-- Usar o componente de formulário para adicionar recursos -->
+    <RecursoAdicionalForm :onSubmit="adicionarRecurso" />
+
+    <!-- Listagem de recursos -->
     <div class="recursos-list">
       <div v-for="recurso in recursos" :key="recurso.id" class="recurso-card">
         <h2>{{ recurso.nome }}</h2>
@@ -12,7 +17,12 @@
 </template>
 
 <script>
+import RecursoAdicionalForm from '../components/RecursoAdicionalForm.vue'; // Importando o componente
+
 export default {
+  components: {
+    RecursoAdicionalForm,
+  },
   data() {
     return {
       recursos: [
@@ -22,10 +32,20 @@ export default {
       ],
     };
   },
+  methods: {
+    adicionarRecurso(novoRecurso) {
+      const novoId = this.recursos.length + 1;
+      this.recursos.push({
+        id: novoId,
+        ...novoRecurso,
+      });
+    },
+  },
 };
 </script>
 
 <style scoped>
+/* Estilos da página */
 .recurso-adicional-container {
   padding: 20px;
   max-width: 800px;
