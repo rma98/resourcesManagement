@@ -3,7 +3,8 @@ import Login from '../views/Login.vue'; // Importe o componente Login
 import Register from '../views/Register.vue';
 import Home from '../views/Home.vue';
 import Adicionar from '../views/Adicionar.vue';
-import RecursoAdicional from '../views/RecursoAdicional.vue'; // Nova página de recursos adicionais
+import RecursoAdicional from '../views/RecursoAdicional.vue';
+import Salas from '../views/Salas.vue';
 
 const routes = [
     { 
@@ -25,6 +26,11 @@ const routes = [
         path: '/recursos-adicionais', 
         name: 'RecursoAdicional', 
         component: RecursoAdicional 
+    },
+    {
+        path: '/salas',
+        name: 'Salas',
+        component: Salas
     },
     {
         path: '/',
