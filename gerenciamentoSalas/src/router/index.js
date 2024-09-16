@@ -5,6 +5,7 @@ import Home from '../views/Home.vue';
 import Adicionar from '../views/Adicionar.vue';
 import RecursoAdicional from '../views/RecursoAdicional.vue';
 import Salas from '../views/Salas.vue';
+import Laboratorios from '../views/Laboratorios.vue';
 
 const routes = [
     { 
@@ -31,6 +32,11 @@ const routes = [
         path: '/salas',
         name: 'Salas',
         component: Salas
+    },
+    {
+        path: '/laboratorios',
+        name: 'Laboratorios',
+        component: Laboratorios
     },
     {
         path: '/',
