@@ -14,4 +14,3 @@ export default {
 <style>
 /* Estilos globais podem ser adicionados aqui */
 </style>
-
