@@ -3,7 +3,7 @@ import Login from '../views/Login.vue'; // Importe o componente Login
 import Register from '../views/Register.vue';
 import Home from '../views/Home.vue';
 import Adicionar from '../views/Adicionar.vue';
-
+import RecursoAdicional from '../views/RecursoAdicional.vue'; // Nova página de recursos adicionais
 
 const routes = [
     { 
@@ -20,6 +20,11 @@ const routes = [
         path: '/adicionar', 
         name: 'Adicionar', 
         component: Adicionar 
+    },
+    { 
+        path: '/recursos-adicionais', 
+        name: 'RecursoAdicional', 
+        component: RecursoAdicional 
     },
     {
         path: '/',
