@@ -1,15 +1,6 @@
 <template>
   <div class="home-container">
-    <aside class="sidebar">
-      <h2>Menu</h2>
-      <ul>
-        <li><router-link to="/">Início</router-link></li>
-        <li><router-link to="/salas">Salas</router-link></li>
-        <li><router-link to="/laboratorios">Laboratórios</router-link></li>
-        <li><router-link to="/recursos-adicionais">Recursos Adicionais</router-link></li>
-        <li><button @click="handleLogout">Sair</button></li>
-      </ul>
-    </aside>
+    <MenuSidebar />
     <main class="main-content">
       <h1>Bem-vindo à Página Inicial</h1>
       <button class="add-button" @click="handleAdd">Adicionar Sala/Lab</button>
@@ -30,8 +21,13 @@
 </template>
 
 <script>
+import MenuSidebar from '../components/MenuSidebar.vue';
+
 export default {
   name: 'Home',
+  components: {
+    MenuSidebar,
+  },
   data() {
     return {
       items: [
@@ -45,10 +41,6 @@ export default {
     };
   },
   methods: {
-    handleLogout() {
-      // Lógica para logout (redirecionar ou limpar dados de autenticação)
-      console.log('Logout');
-    },
     handleAdd() {
       // Redirecionar para a página de adicionar sala/lab
       this.$router.push('/adicionar');
@@ -62,42 +54,6 @@ export default {
   display: flex;
   gap: 20px;
   margin: 20px;
-}
-
-.sidebar {
-  width: 220px;
-  background-color: #f4f4f4;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar h2 {
-  margin-top: 0;
-  text-align: center;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar li {
-  margin-bottom: 15px;
-}
-
-.sidebar a,
-.sidebar button {
-  text-decoration: none;
-  color: #333;
-  display: block;
-  padding: 12px;
-  border-radius: 6px;
-  transition: background-color 0.3s;
-}
-
-.sidebar a:hover,
-.sidebar button:hover {
-  background-color: #ddd;
 }
 
 .main-content {
