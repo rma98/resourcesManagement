@@ -11,7 +11,7 @@
         <div class="input-group">
             <button type="submit" class="btn">Entrar</button>
         </div>
-        <p>Não tem uma conta? <a href="register.html">Cadastre-se</a></p>
+        <p>Não tem uma conta? <router-link to="/register">Cadastre-se</router-link></p>
     </form>
 </template>
 
