@@ -40,10 +40,15 @@
         </div>
       </div>
     </main>
+<<<<<<< HEAD
+=======
+    <Footer />
+>>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 import ItemCard from "../components/ItemCard.vue";
 import { mapState } from "vuex";
 
@@ -55,6 +60,23 @@ export default {
     return {
       items: [], // Array para armazenar todos os recursos (salas e laboratórios)
       selectedType: "", // Tipo selecionado pelo usuário para filtrar
+=======
+import Header from "../components/Header.vue";
+import Sidebar from "../components/Sidebar.vue";
+import CardList from "../components/CardList.vue";
+import Footer from "../components/Footer.vue";
+
+export default {
+  components: {
+    Header,
+    Sidebar,
+    CardList,
+    Footer, // Importa o componente Footer
+  },
+  data() {
+    return {
+      isSidebarActive: false,
+>>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
     };
   },
   computed: {
@@ -84,6 +106,7 @@ export default {
     this.loadResources(); // Carregar todos os recursos assim que o componente for criado
   },
   methods: {
+<<<<<<< HEAD
     // Função para carregar todos os recursos da API
     async loadResources() {
       try {
@@ -103,6 +126,10 @@ export default {
     handleItemDeleted(id) {
       console.log(`Recurso com ID ${id} foi excluído.`);
       this.items = this.items.filter((item) => item.id !== id); // Remove o item excluído da lista
+=======
+    toggleSidebar() {
+      this.isSidebarActive = !this.isSidebarActive;
+>>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
     },
   },
 };
@@ -113,10 +140,15 @@ export default {
   padding: 20px;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   gap: 20px;
+=======
+  min-height: 100vh;
+>>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
 }
 
 main {
+<<<<<<< HEAD
   padding: 20px;
 }
 
@@ -204,5 +236,9 @@ main {
   h2 {
     font-size: 28px;
   }
+=======
+  flex: 1;
+  padding: 20px;
+>>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
 }
 </style>
