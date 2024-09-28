@@ -1,70 +1,93 @@
 <template>
-  <form class="login-form" @submit.prevent="onSubmit">
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" v-model="email" class="input-field" required />
-    </div>
-
-    <div class="form-group">
-      <label for="password">Senha</label>
-      <input type="password" id="password" v-model="password" class="input-field" required />
-    </div>
-
-    <button type="submit" class="login-button">Login</button>
-  </form>
+    <form @submit.prevent="onSubmit" id="loginForm">
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" v-model="email" placeholder="Digite seu email" required />
+        </div>
+        <div class="input-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" v-model="password" placeholder="Digite sua senha" required />
+        </div>
+        <div class="input-group">
+            <button type="submit" class="btn">Entrar</button>
+        </div>
+        <p>Não tem uma conta? <a href="register.html">Cadastre-se</a></p>
+    </form>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-
-const email = ref('');
-const password = ref('');
-
-function onSubmit() {
-  console.log('Login submitted', email.value, password.value);
-}
+<script>
+export default {
+    data() {
+        return {
+            email: '',
+            password: '',
+        };
+    },
+    methods: {
+        onSubmit() {
+            const credentials = {
+                email: this.email,
+                password: this.password,
+            };
+            this.$emit('submit', credentials);
+        },
+    },
+};
 </script>
 
 <style scoped>
-/* Estilos específicos para o formulário de login */
-.login-form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  display: flex;
-  flex-direction: column;
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.form-group {
-  margin-bottom: 15px;
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-.label {
-  font-size: 0.9rem;
-  color: #333;
-  margin-bottom: 5px;
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-.input-field {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
+input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
 }
 
-.login-button {
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.login-button:hover {
-  background-color: #0056b3;
+.btn:hover {
+    background-color: #45a049;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+p a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #388e3c;
 }
 </style>
