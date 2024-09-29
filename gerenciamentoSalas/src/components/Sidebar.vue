@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <!-- Sidebar -->
   <nav class="sidebar" :class="{ active: sidebarVisible }" id="sidebar">
     <ul>
@@ -44,6 +45,13 @@
           <i class="fas fa-sign-out-alt fa-2x"></i> Sair
         </button>
       </li>
+=======
+  <nav>
+    <ul>
+      <li @click="handleMenuClick('home')">Home</li>
+      <li @click="handleMenuClick('viewRooms')">Visualizar Salas</li>
+      <li @click="handleMenuClick('viewLabs')">Visualizar Laboratórios</li>
+>>>>>>> 6b4e234 (feat: atualiza componente Sidebar.vue)
     </ul>
   </nav>
 </template>
@@ -52,6 +60,7 @@
 import { mapActions, mapState } from "vuex";
 
 export default {
+<<<<<<< HEAD
   props: {
     sidebarVisible: Boolean,
   },
@@ -71,6 +80,27 @@ export default {
     logoutAndClose() {
       this.logout(); // Executa o logout
       this.$emit("closeSidebar"); // Emite o evento para fechar a sidebar
+=======
+  props: ["isLoggedIn"],
+  methods: {
+    handleMenuClick(option) {
+      if (!this.isLoggedIn) {
+        this.$emit("show-popup"); // Emite um evento para abrir o popup
+      } else {
+        switch (option) {
+          case "home":
+            this.$router.push("/"); // Redireciona para a página Home
+            break;
+          case "viewRooms":
+            this.$router.push("/view-rooms"); // Altere para o caminho correto
+            break;
+          case "viewLabs":
+            this.$router.push("/view-labs"); // Altere para o caminho correto
+            break;
+        }
+        this.closePopup(); // Fecha o popup ao escolher uma opção
+      }
+>>>>>>> 6b4e234 (feat: atualiza componente Sidebar.vue)
     },
   },
 };
