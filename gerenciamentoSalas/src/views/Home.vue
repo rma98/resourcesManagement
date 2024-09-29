@@ -58,8 +58,12 @@
       <CardList :spaces="spaces" @card-clicked="handleCardClick" />
     </main>
     <Footer />
+<<<<<<< HEAD
     <LoginPopup v-if="showLoginPopup" @close-popup="closePopup" />
 >>>>>>> f04017f (chore: atualizações gerais de dependências e melhorias na Home.vue)
+=======
+    <LoginPopup :showPopup="showLoginPopup" @close-popup="closePopup" /> <!-- Passando a prop -->
+>>>>>>> 4001976 (chore: atualizações gerais de dependências e melhorias na Home.vue)
   </div>
 </template>
 
@@ -96,6 +100,7 @@ export default {
       isSidebarActive: false,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
 =======
       showLoginPopup: false, // Controle de visibilidade do popup de login
@@ -106,6 +111,9 @@ export default {
       spaces: [ // Exemplo de dados de espaços
 =======
       showLoginPopup: false,
+=======
+      showLoginPopup: false, // Controle de visibilidade do popup de login
+>>>>>>> 4001976 (chore: atualizações gerais de dependências e melhorias na Home.vue)
       isLoggedIn: false, // Simula estado de login
       spaces: [
 >>>>>>> c0ff1f1 (chore: atualizações gerais de dependências e melhorias na Home.vue)
@@ -168,7 +176,7 @@ export default {
 >>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
     },
     closePopup() {
-      this.showLoginPopup = false;
+      this.showLoginPopup = false; // Fecha o popup
     },
     handleCardClick(card) {
       console.log("Card clicado: ", card); // Verifica se o clique no card está funcionando
