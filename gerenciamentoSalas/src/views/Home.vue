@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <main>
+<<<<<<< HEAD
       <div class="welcome-message">
         <h2 v-if="isLoggedIn">
           <i class="fas fa-user-circle icon"></i>
@@ -53,6 +54,12 @@
 >>>>>>> d9101aa (chore: atualizações gerais de dependências e melhorias na Home.vue)
     <Footer />
 >>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
+=======
+      <CardList :spaces="spaces" @card-clicked="handleCardClick" />
+    </main>
+    <Footer />
+    <LoginPopup v-if="showLoginPopup" @close-popup="closePopup" />
+>>>>>>> f04017f (chore: atualizações gerais de dependências e melhorias na Home.vue)
   </div>
 </template>
 
@@ -82,7 +89,7 @@ export default {
     Sidebar,
     CardList,
     Footer,
-    LoginPopup, // Adiciona o componente LoginPopup
+    LoginPopup,
   },
   data() {
     return {
@@ -92,7 +99,14 @@ export default {
 =======
       showLoginPopup: false, // Controle de visibilidade do popup de login
       isLoggedIn: false, // Simula estado de login
+<<<<<<< HEAD
 >>>>>>> d9101aa (chore: atualizações gerais de dependências e melhorias na Home.vue)
+=======
+      spaces: [ // Exemplo de dados de espaços
+        { title: 'Sala 101', status: 'Disponível', description: 'Laboratório de Informática', isAvailable: true },
+        { title: 'Sala 102', status: 'Indisponível', description: 'Sala de aula com 30 lugares', isAvailable: false }
+      ]
+>>>>>>> f04017f (chore: atualizações gerais de dependências e melhorias na Home.vue)
     };
   },
   computed: {
@@ -150,17 +164,17 @@ export default {
     closePopup() {
       this.showLoginPopup = false; // Fecha o popup
     },
-    redirectTo(page) {
-      this.$router.push({ name: page }); // Redireciona para a página de login ou cadastro
-    },
     handleCardClick(card) {
       if (!this.isLoggedIn) {
         this.showLoginPopup = true; // Abre o popup de login se o usuário não estiver logado
       } else {
-        console.log(`Espaço reservado: ${card.name}`);
+        console.log(`Espaço reservado: ${card.title}`);
       }
     },
-  },
+    redirectTo(page) {
+      this.$router.push({ name: page }); // Redireciona para a página de login ou cadastro
+    }
+  }
 };
 </script>
 
