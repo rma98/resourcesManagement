@@ -1,18 +1,35 @@
 <template>
-  <div class="card">
+  <div class="card" :class="{ available: isAvailable, unavailable: !isAvailable }" @click="handleClick">
     <h3>{{ title }}</h3>
-    <p class="status" :class="statusClass">{{ status }}</p>
-    <p class="description">{{ description }}</p>
+    <p>{{ description }}</p>
+    <span :class="statusClass">{{ status }}</span>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    title: String,
-    status: String,
-    description: String,
-    isAvailable: Boolean
+    title: {
+      type: String,
+      required: true
+    },
+    description: {
+      type: String,
+      required: true
+    },
+    status: {
+      type: String,
+      required: true
+    },
+    isAvailable: {
+      type: Boolean,
+      required: true
+    }
+  },
+  methods: {
+    handleClick() {
+      this.$emit('card-clicked', { title: this.title }); // Emitir um evento com o título do card
+    }
   },
   computed: {
     statusClass() {
@@ -21,6 +38,7 @@ export default {
   }
 };
 </script>
+
 
 <style scoped>
 .card {
