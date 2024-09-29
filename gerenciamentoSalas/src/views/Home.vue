@@ -28,9 +28,9 @@ export default {
   data() {
     return {
       isSidebarActive: false,
-      showLoginPopup: false, // Controle de visibilidade do popup de login
+      showLoginPopup: false,
       isLoggedIn: false, // Simula estado de login
-      spaces: [ // Exemplo de dados de espaços
+      spaces: [
         { title: 'Sala 101', status: 'Disponível', description: 'Laboratório de Informática', isAvailable: true },
         { title: 'Sala 102', status: 'Indisponível', description: 'Sala de aula com 30 lugares', isAvailable: false }
       ]
@@ -41,9 +41,10 @@ export default {
       this.isSidebarActive = !this.isSidebarActive;
     },
     closePopup() {
-      this.showLoginPopup = false; // Fecha o popup
+      this.showLoginPopup = false;
     },
     handleCardClick(card) {
+      console.log("Card clicado: ", card); // Verifica se o clique no card está funcionando
       if (!this.isLoggedIn) {
         this.showLoginPopup = true; // Abre o popup de login se o usuário não estiver logado
       } else {
@@ -51,7 +52,7 @@ export default {
       }
     },
     redirectTo(page) {
-      this.$router.push({ name: page }); // Redireciona para a página de login ou cadastro
+      this.$router.push({ name: page });
     }
   }
 };
