@@ -95,6 +95,7 @@ export default {
     return {
       isSidebarActive: false,
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
 =======
       showLoginPopup: false, // Controle de visibilidade do popup de login
@@ -103,6 +104,11 @@ export default {
 >>>>>>> d9101aa (chore: atualizações gerais de dependências e melhorias na Home.vue)
 =======
       spaces: [ // Exemplo de dados de espaços
+=======
+      showLoginPopup: false,
+      isLoggedIn: false, // Simula estado de login
+      spaces: [
+>>>>>>> c0ff1f1 (chore: atualizações gerais de dependências e melhorias na Home.vue)
         { title: 'Sala 101', status: 'Disponível', description: 'Laboratório de Informática', isAvailable: true },
         { title: 'Sala 102', status: 'Indisponível', description: 'Sala de aula com 30 lugares', isAvailable: false }
       ]
@@ -162,9 +168,10 @@ export default {
 >>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
     },
     closePopup() {
-      this.showLoginPopup = false; // Fecha o popup
+      this.showLoginPopup = false;
     },
     handleCardClick(card) {
+      console.log("Card clicado: ", card); // Verifica se o clique no card está funcionando
       if (!this.isLoggedIn) {
         this.showLoginPopup = true; // Abre o popup de login se o usuário não estiver logado
       } else {
@@ -172,7 +179,7 @@ export default {
       }
     },
     redirectTo(page) {
-      this.$router.push({ name: page }); // Redireciona para a página de login ou cadastro
+      this.$router.push({ name: page });
     }
   }
 };
