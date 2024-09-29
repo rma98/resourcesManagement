@@ -6,7 +6,7 @@
       <CardList :spaces="spaces" @card-clicked="handleCardClick" />
     </main>
     <Footer />
-    <LoginPopup v-if="showLoginPopup" @close-popup="closePopup" />
+    <LoginPopup :showPopup="showLoginPopup" @close-popup="closePopup" /> <!-- Passando a prop -->
   </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       isSidebarActive: false,
-      showLoginPopup: false,
+      showLoginPopup: false, // Controle de visibilidade do popup de login
       isLoggedIn: false, // Simula estado de login
       spaces: [
         { title: 'Sala 101', status: 'Disponível', description: 'Laboratório de Informática', isAvailable: true },
@@ -41,7 +41,7 @@ export default {
       this.isSidebarActive = !this.isSidebarActive;
     },
     closePopup() {
-      this.showLoginPopup = false;
+      this.showLoginPopup = false; // Fecha o popup
     },
     handleCardClick(card) {
       console.log("Card clicado: ", card); // Verifica se o clique no card está funcionando
