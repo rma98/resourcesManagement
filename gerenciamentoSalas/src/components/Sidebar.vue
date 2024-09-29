@@ -1,22 +1,36 @@
 <template>
-  <nav class="sidebar" :class="{ active: isActive }">
+  <nav>
     <ul>
-      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#"><i class="fas fa-door-open"></i> Visualizar Salas</a></li>
-      <li><a href="#"><i class="fas fa-flask"></i> Visualizar Laboratórios</a></li>
-      <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+      <li @click="handleMenuClick('home')">Home</li>
+      <li @click="handleMenuClick('viewRooms')">Visualizar Salas</li>
+      <li @click="handleMenuClick('viewLabs')">Visualizar Laboratórios</li>
     </ul>
   </nav>
 </template>
 
 <script>
 export default {
-  props: {
-    isActive: {
-      type: Boolean,
-      default: false
-    }
-  }
+  props: ["isLoggedIn"],
+  methods: {
+    handleMenuClick(option) {
+      if (!this.isLoggedIn) {
+        this.$emit("show-popup"); // Emite um evento para abrir o popup
+      } else {
+        switch (option) {
+          case "home":
+            this.$router.push("/"); // Redireciona para a página Home
+            break;
+          case "viewRooms":
+            this.$router.push("/view-rooms"); // Altere para o caminho correto
+            break;
+          case "viewLabs":
+            this.$router.push("/view-labs"); // Altere para o caminho correto
+            break;
+        }
+        this.closePopup(); // Fecha o popup ao escolher uma opção
+      }
+    },
+  },
 };
 </script>
 
