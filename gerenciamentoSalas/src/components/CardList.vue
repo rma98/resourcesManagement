@@ -9,6 +9,7 @@
         :status="space.status"
         :description="space.description"
         :isAvailable="space.isAvailable"
+        @card-clicked="handleCardClick"
       />
     </div>
   </section>
@@ -18,16 +19,16 @@
 import Card from './Card.vue';
 
 export default {
-  components: { Card },
-  data() {
-    return {
-      spaces: [
-        { title: 'Sala 01', status: 'Disponível', description: 'Sala de aula para 40 alunos, equipada com projetor.', isAvailable: true },
-        { title: 'Laboratório 01', status: 'Indisponível', description: 'Laboratório de Informática com 20 computadores.', isAvailable: false },
-        { title: 'Sala 02', status: 'Disponível', description: 'Sala equipada para aulas multimídia com até 30 alunos.', isAvailable: true }
-        // Adicione mais espaços conforme necessário
-      ]
-    };
+  components: {
+    Card
+  },
+  props: {
+    spaces: Array // Recebe os espaços via props
+  },
+  methods: {
+    handleCardClick(card) {
+      this.$emit('card-clicked', card); // Propaga o evento para o componente pai
+    }
   }
 };
 </script>
