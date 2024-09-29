@@ -1,16 +1,26 @@
 <template>
-  <nav>
+  <nav class="sidebar" :class="{ active: isActive }">
     <ul>
-      <li @click="handleMenuClick('home')">Home</li>
-      <li @click="handleMenuClick('viewRooms')">Visualizar Salas</li>
-      <li @click="handleMenuClick('viewLabs')">Visualizar Laboratórios</li>
+      <li @click="handleMenuClick('home')"><i class="fas fa-home"></i> Home</li>
+      <li @click="handleMenuClick('viewRooms')"><i class="fas fa-door-open"></i> Visualizar Salas</li>
+      <li @click="handleMenuClick('viewLabs')"><i class="fas fa-flask"></i> Visualizar Laboratórios</li>
+      <li @click="logout"><i class="fas fa-sign-out-alt"></i> Sair</li>
     </ul>
   </nav>
 </template>
 
 <script>
 export default {
-  props: ["isLoggedIn"],
+  props: {
+    isActive: {
+      type: Boolean,
+      default: false
+    },
+    isLoggedIn: {
+      type: Boolean,
+      default: false
+    }
+  },
   methods: {
     handleMenuClick(option) {
       if (!this.isLoggedIn) {
@@ -27,8 +37,11 @@ export default {
             this.$router.push("/view-labs"); // Altere para o caminho correto
             break;
         }
-        this.closePopup(); // Fecha o popup ao escolher uma opção
       }
+    },
+    logout() {
+      // Implemente a lógica para deslogar o usuário
+      console.log("Usuário deslogado");
     },
   },
 };
