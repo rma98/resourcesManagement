@@ -41,7 +41,16 @@
       </div>
     </main>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+    <!-- Chama o LoginPopup.vue -->
+    <LoginPopup 
+      :showPopup="showLoginPopup" 
+      @close-popup="closePopup" 
+      @redirect="redirectTo"
+    />
+>>>>>>> d9101aa (chore: atualizações gerais de dependências e melhorias na Home.vue)
     <Footer />
 >>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
   </div>
@@ -65,18 +74,25 @@ import Header from "../components/Header.vue";
 import Sidebar from "../components/Sidebar.vue";
 import CardList from "../components/CardList.vue";
 import Footer from "../components/Footer.vue";
+import LoginPopup from "../components/LoginPopup.vue";
 
 export default {
   components: {
     Header,
     Sidebar,
     CardList,
-    Footer, // Importa o componente Footer
+    Footer,
+    LoginPopup, // Adiciona o componente LoginPopup
   },
   data() {
     return {
       isSidebarActive: false,
+<<<<<<< HEAD
 >>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
+=======
+      showLoginPopup: false, // Controle de visibilidade do popup de login
+      isLoggedIn: false, // Simula estado de login
+>>>>>>> d9101aa (chore: atualizações gerais de dependências e melhorias na Home.vue)
     };
   },
   computed: {
@@ -130,6 +146,19 @@ export default {
     toggleSidebar() {
       this.isSidebarActive = !this.isSidebarActive;
 >>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
+    },
+    closePopup() {
+      this.showLoginPopup = false; // Fecha o popup
+    },
+    redirectTo(page) {
+      this.$router.push({ name: page }); // Redireciona para a página de login ou cadastro
+    },
+    handleCardClick(card) {
+      if (!this.isLoggedIn) {
+        this.showLoginPopup = true; // Abre o popup de login se o usuário não estiver logado
+      } else {
+        console.log(`Espaço reservado: ${card.name}`);
+      }
     },
   },
 };
