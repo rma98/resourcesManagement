@@ -1,7 +1,7 @@
 <template>
-  <div v-if="showPopup" class="popup">
-    <div class="popup-content">
-      <span class="close" @click="$emit('close-popup')">Fechar</span>
+  <div v-if="showPopup" class="popup" @click.self="$emit('close-popup')">
+    <div class="popup-content" @click.stop>
+      <span class="close" @click="$emit('close-popup')">x</span>
       <h2>Por favor, faça login para continuar</h2>
       <div class="button-container">
         <button @click="redirectTo('login')">Login</button>
@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     redirectTo(page) {
-      this.$router.push({ name: page });
+      this.$router.push(page);
     }
   }
 };
