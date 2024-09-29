@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     handleClick() {
-      this.$emit('card-clicked', { title: this.title }); // Emitir um evento com o título do card
+      this.$emit('card-clicked', { title: this.title }); // Emitindo o evento de clique
     }
   },
   computed: {
@@ -38,7 +38,6 @@ export default {
   }
 };
 </script>
-
 
 <style scoped>
 .card {
