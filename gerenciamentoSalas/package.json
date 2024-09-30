@@ -9,7 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@fortawesome/fontawesome-free": "^6.6.0",
+=======
+>>>>>>> c30366a (feat: add registration form and logic to communicate with MySQL database)
     "axios": "^1.7.7",
     "vue": "^3.4.21",
     "vue-router": "^4.4.5"
