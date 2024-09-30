@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@fortawesome/fontawesome-free": "^6.6.0",
 =======
 >>>>>>> c84fa61 (chore: add package.json to repository)
@@ -55,6 +56,11 @@
 =======
     "@fortawesome/fontawesome-free": "^6.6.0",
 >>>>>>> c2d02b2 (fix: Fix a bug)
+=======
+    "@fortawesome/fontawesome-free": "^6.6.0",
+=======
+>>>>>>> c30366a (feat: add registration form and logic to communicate with MySQL database)
+>>>>>>> e41dd3e (feat: add registration form and logic to communicate with MySQL database)
     "axios": "^1.7.7",
     "vue": "^3.4.21",
     "vue-router": "^4.4.5",
