@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
@@ -34,24 +36,27 @@ export default {
                 name: '',
                 email: '',
                 password: '',
-                type: 'professor', // Valor padrão
+                type: 'PROFESSOR', // Valor padrão
             },
         };
     },
     methods: {
-        onSubmit() {
-            // Emitindo os dados do formulário para o componente pai
-            this.$emit('submit', this.formData);
-            // Limpar o formulário após o envio (opcional)
-            this.resetForm();
-        },
-        resetForm() {
-            this.formData = {
-                name: '',
-                email: '',
-                password: '',
-                type: 'professor',
-            };
+        async onSubmit() {
+            try {
+                // Enviar os dados do formulário para o backend
+                const response = await axios.post('http://localhost:8080/api/usuarios', {
+                    nome: this.formData.name,
+                    email: this.formData.email,
+                    senha: this.formData.password,
+                    tipo: this.formData.type.toUpperCase(),
+                });
+
+                console.log(response.data);
+                // Redirecionar para a página inicial ou /home após o sucesso
+                this.$router.push('/');
+            } catch (error) {
+                console.error('Erro ao cadastrar o usuário:', error.response ? error.response.data : error.message);
+            }
         },
     },
 };
