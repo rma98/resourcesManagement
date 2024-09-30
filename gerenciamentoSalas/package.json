@@ -20,6 +20,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@fortawesome/fontawesome-free": "^6.6.0",
 =======
 >>>>>>> c84fa61 (chore: add package.json to repository)
@@ -34,6 +35,10 @@
 =======
 =======
 >>>>>>> 799eebe (feat: add registration form and logic to communicate with MySQL database)
+=======
+=======
+>>>>>>> cd1315b (Resolve merge conflict in package.json)
+>>>>>>> b41d30d (Resolve merge conflict in package.json)
     "@fortawesome/fontawesome-free": "^6.6.0",
 =======
 >>>>>>> c30366a (feat: add registration form and logic to communicate with MySQL database)
@@ -41,12 +46,15 @@
     "@fortawesome/fontawesome-free": "^6.6.0",
 >>>>>>> 952afc5 (Resolve merge conflict in package.json)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> cd1315b (Resolve merge conflict in package.json)
 =======
     "@fortawesome/fontawesome-free": "^6.6.0",
 >>>>>>> d29f2b8 (fix: Fix a bug)
 =======
 >>>>>>> 799eebe (feat: add registration form and logic to communicate with MySQL database)
+=======
+>>>>>>> b41d30d (Resolve merge conflict in package.json)
 =======
     "@fortawesome/fontawesome-free": "^6.6.0",
 =======
@@ -79,7 +87,12 @@
 >>>>>>> dfc6226 (Resolve merge conflict in package.json)
 =======
 >>>>>>> b62cd8f (feat: add registration form and logic to communicate with MySQL database)
+<<<<<<< HEAD
 >>>>>>> 799eebe (feat: add registration form and logic to communicate with MySQL database)
+=======
+=======
+>>>>>>> cd1315b (Resolve merge conflict in package.json)
+>>>>>>> b41d30d (Resolve merge conflict in package.json)
     "axios": "^1.7.7",
     "vue": "^3.4.21",
     "vue-router": "^4.4.5",
