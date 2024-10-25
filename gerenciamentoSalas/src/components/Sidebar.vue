@@ -1,18 +1,14 @@
 <template>
-  <nav class="sidebar" :class="{ active: isActive }">
+  <!-- Sidebar -->
+  <nav class="sidebar" :class="{ active: sidebarVisible }" id="sidebar">
     <ul>
-      <li @click="handleMenuClick('home')">
-        <a href="#"><i class="fas fa-home"></i> Home</a>
-      </li>
-      <li @click="handleMenuClick('viewRooms')">
-        <a href="#"><i class="fas fa-door-open"></i> Visualizar Salas</a>
-      </li>
-      <li @click="handleMenuClick('viewLabs')">
-        <a href="#"><i class="fas fa-flask"></i> Visualizar Laboratórios</a>
-      </li>
-      <li v-if="isLoggedIn" @click="logout">
-        <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
-      </li>
+      <li><router-link to="/" @click="$emit('closeSidebar')"><i class="fas fa-home fa-2x"></i> Home</router-link></li>
+      <li><router-link to="/view-room" @click="$emit('closeSidebar')"><i class="fas fa-door-open fa-2x"></i> Visualizar Salas</router-link></li>
+      <li><router-link to="/view-lab" @click="$emit('closeSidebar')"><i class="fas fa-flask fa-2x"></i> Visualizar Laboratórios</router-link></li>
+      <li id="addRoomMenu"><router-link to="/add-room" @click="$emit('closeSidebar')"><i class="fas fa-plus fa-2x"></i> Adicionar Sala</router-link></li>
+      <li id="addLabMenu"><router-link to="/add-lab" @click="$emit('closeSidebar')"><i class="fas fa-plus fa-2x"></i> Adicionar Laboratório</router-link></li>
+      <li id="loginMenu"><a href="#"><i class="fas fa-user-circle fa-2x"></i> Login</a></li>
+      <li id="registerMenu"><a href="#"><i class="fas fa-user-plus fa-2x"></i> Cadastro</a></li>
     </ul>
   </nav>
 </template>
@@ -20,45 +16,7 @@
 <script>
 export default {
   props: {
-    isActive: {
-      type: Boolean,
-      default: false,
-    },
-    isLoggedIn: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  methods: {
-    handleMenuClick(option) {
-      switch (option) {
-        case 'home':
-          // Permanece na página atual, não faz nada
-          this.closeSidebar(); // Fecha o menu
-          break;
-        case 'viewRooms':
-        case 'viewLabs':
-          if (!this.isLoggedIn) {
-            this.$emit('show-popup'); // Emite um evento para abrir o popup
-          } else {
-            const route = option === 'viewRooms' ? '/view-rooms' : '/view-labs';
-            this.$router.push(route); // Redireciona para a página correspondente
-          }
-          this.closeSidebar(); // Fecha o menu após a seleção
-          break;
-        default:
-          break;
-      }
-    },
-    closeSidebar() {
-      // Chama o método para fechar a sidebar
-      this.$emit('close-sidebar'); // Emite um evento para o componente pai tratar o fechamento
-    },
-    logout() {
-      // Adicione a lógica para logout aqui
-      this.$emit('logout'); // Emite um evento para o componente pai tratar o logout
-      this.closeSidebar(); // Fecha o menu após logout
-    },
+    sidebarVisible: Boolean, // Recebe a propriedade para controlar a visibilidade
   },
 };
 </script>
@@ -70,14 +28,14 @@ export default {
   right: -250px;
   top: 0;
   height: 100%;
-  background-color: #388e3c; /* Cor de fundo da sidebar */
+  background-color: #388e3c;
   transition: right 0.3s;
   z-index: 100;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar.active {
-  right: 0; /* Quando ativa, move para a direita */
+  right: 0;
 }
 
 .sidebar ul {
@@ -90,7 +48,8 @@ export default {
 }
 
 .sidebar ul li a {
-  color: white; /* Cor do texto dos links */
+  font-size: 1.3rem;
+  color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -98,11 +57,11 @@ export default {
 }
 
 .sidebar ul li a:hover {
-  background-color: #4caf50; /* Cor ao passar o mouse */
+  background-color: #4caf50;
 }
 
 .sidebar ul li a i {
   margin-right: 10px;
-  color: white; /* Cor dos ícones */
+  color: white;
 }
 </style>
