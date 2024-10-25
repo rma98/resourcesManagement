@@ -1,6 +1,7 @@
 <template>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <!-- Sidebar -->
   <nav class="sidebar" :class="{ active: sidebarVisible }" id="sidebar">
     <ul>
@@ -76,6 +77,18 @@
         <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
       </li>
 >>>>>>> 1d8af65 (feat: atualiza componente Sidebar.vue)
+=======
+  <!-- Sidebar -->
+  <nav class="sidebar" :class="{ active: sidebarVisible }" id="sidebar">
+    <ul>
+      <li><router-link to="/" @click="$emit('closeSidebar')"><i class="fas fa-home fa-2x"></i> Home</router-link></li>
+      <li><router-link to="/view-room" @click="$emit('closeSidebar')"><i class="fas fa-door-open fa-2x"></i> Visualizar Salas</router-link></li>
+      <li><router-link to="/view-lab" @click="$emit('closeSidebar')"><i class="fas fa-flask fa-2x"></i> Visualizar Laboratórios</router-link></li>
+      <li id="addRoomMenu"><router-link to="/add-room" @click="$emit('closeSidebar')"><i class="fas fa-plus fa-2x"></i> Adicionar Sala</router-link></li>
+      <li id="addLabMenu"><router-link to="/add-lab" @click="$emit('closeSidebar')"><i class="fas fa-plus fa-2x"></i> Adicionar Laboratório</router-link></li>
+      <li id="loginMenu"><a href="#"><i class="fas fa-user-circle fa-2x"></i> Login</a></li>
+      <li id="registerMenu"><a href="#"><i class="fas fa-user-plus fa-2x"></i> Cadastro</a></li>
+>>>>>>> e6cddd3 (feat: update Sidebar.vue)
     </ul>
   </nav>
 </template>
@@ -109,6 +122,7 @@ export default {
   props: ["isLoggedIn"],
 =======
   props: {
+<<<<<<< HEAD
     isActive: {
       type: Boolean,
       default: false,
@@ -150,6 +164,9 @@ export default {
       this.$emit('logout'); // Emite um evento para o componente pai tratar o logout
       this.closeSidebar(); // Fecha o menu após logout
     },
+=======
+    sidebarVisible: Boolean, // Recebe a propriedade para controlar a visibilidade
+>>>>>>> e6cddd3 (feat: update Sidebar.vue)
   },
 };
 </script>
@@ -162,17 +179,21 @@ export default {
   top: 0;
   height: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #388e3c;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
 =======
   background-color: #388e3c; /* Cor de fundo da sidebar */
 >>>>>>> 1d8af65 (feat: atualiza componente Sidebar.vue)
+=======
+  background-color: #388e3c;
+>>>>>>> e6cddd3 (feat: update Sidebar.vue)
   transition: right 0.3s;
   z-index: 100;
 }
 
 .sidebar.active {
-  right: 0; /* Quando ativa, move para a direita */
+  right: 0;
 }
 
 .sidebar ul {
@@ -186,11 +207,16 @@ export default {
 
 .sidebar ul li a {
 <<<<<<< HEAD
+<<<<<<< HEAD
   font-size: 1.3rem;
   color: white;
 =======
   color: white; /* Cor do texto dos links */
 >>>>>>> 1d8af65 (feat: atualiza componente Sidebar.vue)
+=======
+  font-size: 1.3rem;
+  color: white;
+>>>>>>> e6cddd3 (feat: update Sidebar.vue)
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -198,11 +224,12 @@ export default {
 }
 
 .sidebar ul li a:hover {
-  background-color: #4caf50; /* Cor ao passar o mouse */
+  background-color: #4caf50;
 }
 
 .sidebar ul li a i {
   margin-right: 10px;
+<<<<<<< HEAD
 <<<<<<< HEAD
   color: white;
 }
@@ -215,5 +242,8 @@ export default {
 =======
   color: white; /* Cor dos ícones */
 >>>>>>> 1d8af65 (feat: atualiza componente Sidebar.vue)
+=======
+  color: white;
+>>>>>>> e6cddd3 (feat: update Sidebar.vue)
 }
 </style>
