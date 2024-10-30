@@ -7,9 +7,13 @@
       <!-- Aqui as páginas serão renderizadas -->
     </main>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Footer />
 =======
 >>>>>>> bb3adb8 (feat: add MainLayout.vue)
+=======
+    <Footer />
+>>>>>>> e1d2f6c (feat: update MainLayout.vue)
   </div>
 </template>
 
@@ -17,18 +21,26 @@
 import Header from "../components/Header.vue";
 import Sidebar from "../components/Sidebar.vue";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Footer from '../components/Footer.vue';
 =======
 >>>>>>> bb3adb8 (feat: add MainLayout.vue)
+=======
+import Footer from '../components/Footer.vue';
+>>>>>>> e1d2f6c (feat: update MainLayout.vue)
 
 export default {
   components: {
     Header,
     Sidebar,
 <<<<<<< HEAD
+<<<<<<< HEAD
     Footer,
 =======
 >>>>>>> bb3adb8 (feat: add MainLayout.vue)
+=======
+    Footer,
+>>>>>>> e1d2f6c (feat: update MainLayout.vue)
   },
   data() {
     return {
