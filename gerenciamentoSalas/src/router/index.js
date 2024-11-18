@@ -5,44 +5,8 @@ import MainLayout from "../layouts/MainLayout.vue";
 import Home from '../views/Home.vue';
 import Register from '../views/Register.vue';
 import Login from '../views/Login.vue';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2a24f52 (chore: Update router index.js)
-=======
->>>>>>> 5427510 (feat: Update router index.js)
 import AddRecurso from '../views/AddRecurso.vue';
 import EditRecurso from '../views/EditRecurso.vue';
-=======
->>>>>>> 30dc309 (chore: Update router index.js)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5427510 (feat: Update router index.js)
-=======
-import AddRecurso from '../views/AddRecurso.vue';
-import EditRecurso from '../views/EditRecurso.vue';
->>>>>>> 8bfa38e (feat: Update router index.js)
-<<<<<<< HEAD
-=======
->>>>>>> b33330e (chore: Update router index.js)
-=======
-import AddRecurso from '../views/AddRecurso.vue';
-import EditRecurso from '../views/EditRecurso.vue';
->>>>>>> a3bc501 (feat: Update router index.js)
-=======
->>>>>>> 2a24f52 (chore: Update router index.js)
-=======
->>>>>>> 5427510 (feat: Update router index.js)
-=======
-import AddRecurso from '../views/AddRecurso.vue';
-import EditRecurso from '../views/EditRecurso.vue';
->>>>>>> 6c3affc (fix: Resolve conflitos no arquivo index.js)
 
 const routes = [
     {
@@ -52,60 +16,10 @@ const routes = [
             { path: '', name: 'Home', component: Home, },
             { path: '/register', name: 'Register', component: Register },
             { path: '/login', name: 'Login', component: Login },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8bfa38e (feat: Update router index.js)
-=======
->>>>>>> a3bc501 (feat: Update router index.js)
-=======
->>>>>>> 2a24f52 (chore: Update router index.js)
-=======
-=======
->>>>>>> 8bfa38e (feat: Update router index.js)
->>>>>>> 5427510 (feat: Update router index.js)
-=======
->>>>>>> 6c3affc (fix: Resolve conflitos no arquivo index.js)
             { path: '/add-recurso', name: 'AddRecurso', component: AddRecurso, meta: { requiresAuth: true }, },
         ],
     },
     { path: '/editar-recurso/:tipo/:id', name: 'EditRecurso', component: EditRecurso, meta: { requiresAuth: true }, },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2a24f52 (chore: Update router index.js)
-=======
->>>>>>> 5427510 (feat: Update router index.js)
-=======
-        ],
-    },
->>>>>>> 30dc309 (chore: Update router index.js)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8bfa38e (feat: Update router index.js)
-=======
-        ],
-    },
->>>>>>> b33330e (chore: Update router index.js)
-=======
->>>>>>> a3bc501 (feat: Update router index.js)
-=======
->>>>>>> 2a24f52 (chore: Update router index.js)
-=======
-=======
->>>>>>> 8bfa38e (feat: Update router index.js)
->>>>>>> 5427510 (feat: Update router index.js)
-=======
->>>>>>> 6c3affc (fix: Resolve conflitos no arquivo index.js)
     { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
 
