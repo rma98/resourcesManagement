@@ -1,6 +1,7 @@
 <template>
   <div class="container">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <Header @toggle-sidebar="toggleSidebar" />
     <Sidebar
@@ -13,6 +14,9 @@
 >>>>>>> 824c274 (chore: atualizações gerais de dependências e melhorias na Home.vue)
     <main>
 <<<<<<< HEAD
+=======
+    <main>
+>>>>>>> 454e4b2 (feat: Update component Home.vue)
       <div class="welcome-message">
         <h2 v-if="isLoggedIn">
           <i class="fas fa-user-circle icon"></i>
@@ -51,6 +55,7 @@
           <p>Nenhum recurso encontrado.</p>
         </div>
       </div>
+<<<<<<< HEAD
     </main>
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -75,10 +80,14 @@
 =======
     <LoginPopup :showPopup="showLoginPopup" @close-popup="closePopup" /> <!-- Passando a prop -->
 >>>>>>> 4001976 (chore: atualizações gerais de dependências e melhorias na Home.vue)
+=======
+    </main>
+>>>>>>> 454e4b2 (feat: Update component Home.vue)
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 <<<<<<< HEAD
 import ItemCard from "../components/ItemCard.vue";
 import { mapState } from "vuex";
@@ -97,17 +106,18 @@ import Sidebar from "../components/Sidebar.vue";
 import CardList from "../components/CardList.vue";
 import Footer from "../components/Footer.vue";
 import LoginPopup from "../components/LoginPopup.vue";
+=======
+import ItemCard from "../components/ItemCard.vue";
+import { mapState } from "vuex";
+>>>>>>> 454e4b2 (feat: Update component Home.vue)
 
 export default {
   components: {
-    Header,
-    Sidebar,
-    CardList,
-    Footer,
-    LoginPopup,
+    ItemCard,
   },
   data() {
     return {
+<<<<<<< HEAD
       isSidebarActive: false,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -132,6 +142,10 @@ export default {
         { title: 'Sala 102', status: 'Indisponível', description: 'Sala de aula com 30 lugares', isAvailable: false }
       ]
 >>>>>>> f04017f (chore: atualizações gerais de dependências e melhorias na Home.vue)
+=======
+      items: [], // Array para armazenar todos os recursos (salas e laboratórios)
+      selectedType: "", // Tipo selecionado pelo usuário para filtrar
+>>>>>>> 454e4b2 (feat: Update component Home.vue)
     };
   },
   computed: {
@@ -162,6 +176,9 @@ export default {
   },
   methods: {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 454e4b2 (feat: Update component Home.vue)
     // Função para carregar todos os recursos da API
     async loadResources() {
       try {
@@ -175,6 +192,7 @@ export default {
         this.items = data; // Armazena diretamente os dados retornados pela API
       } catch (error) {
         console.error(error);
+<<<<<<< HEAD
       }
     },
     // Função para lidar com a exclusão do item
@@ -201,17 +219,16 @@ export default {
         this.showPopup(); // Abre o popup de login se o usuário não estiver logado
       } else {
         console.log(`Espaço reservado: ${card.title}`);
+=======
+>>>>>>> 454e4b2 (feat: Update component Home.vue)
       }
     },
-    logout() {
-      this.isLoggedIn = false; // Simula logout
-      this.closeSidebar(); // Fecha a sidebar após logout
+    // Função para lidar com a exclusão do item
+    handleItemDeleted(id) {
+      console.log(`Recurso com ID ${id} foi excluído.`);
+      this.items = this.items.filter((item) => item.id !== id); // Remove o item excluído da lista
     },
-    redirectTo(page) {
-      this.$router.push(page);
-      this.closeSidebar(); // Fecha a sidebar após redirecionar
-    }
-  }
+  },
 };
 </script>
 
@@ -221,6 +238,7 @@ export default {
   display: flex;
   flex-direction: column;
 <<<<<<< HEAD
+<<<<<<< HEAD
   gap: 20px;
 =======
   min-height: 100vh;
@@ -229,6 +247,12 @@ export default {
 
 main {
 <<<<<<< HEAD
+=======
+  gap: 20px;
+}
+
+main {
+>>>>>>> 454e4b2 (feat: Update component Home.vue)
   padding: 20px;
 }
 
@@ -316,9 +340,12 @@ main {
   h2 {
     font-size: 28px;
   }
+<<<<<<< HEAD
 =======
   flex: 1;
   padding: 20px;
 >>>>>>> 2a53f15 (chore: atualizações gerais de dependências e melhorias na Home.vue)
+=======
+>>>>>>> 454e4b2 (feat: Update component Home.vue)
 }
 </style>
