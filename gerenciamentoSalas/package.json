@@ -16,6 +16,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> cd1315b (Resolve merge conflict in package.json)
 =======
@@ -45,6 +46,9 @@
 >>>>>>> bedaaae (feat: add registration form and logic to communicate with MySQL database)
 =======
 >>>>>>> 98eb585 (Resolve merge conflict in package.json)
+=======
+    "@fortawesome/fontawesome-free": "^6.6.0",
+>>>>>>> c2d02b2 (fix: Fix a bug)
     "axios": "^1.7.7",
     "vue": "^3.4.21",
     "vue-router": "^4.4.5",
