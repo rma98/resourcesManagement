@@ -7,6 +7,7 @@ import Register from '../views/Register.vue';
 import Login from '../views/Login.vue';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import AddRecurso from '../views/AddRecurso.vue';
 import EditRecurso from '../views/EditRecurso.vue';
 =======
@@ -15,6 +16,8 @@ import EditRecurso from '../views/EditRecurso.vue';
 import AddRecurso from '../views/AddRecurso.vue';
 import EditRecurso from '../views/EditRecurso.vue';
 >>>>>>> 8bfa38e (feat: Update router index.js)
+=======
+>>>>>>> b33330e (chore: Update router index.js)
 
 const routes = [
     {
@@ -24,6 +27,7 @@ const routes = [
             { path: '', name: 'Home', component: Home, },
             { path: '/register', name: 'Register', component: Register },
             { path: '/login', name: 'Login', component: Login },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -39,6 +43,10 @@ const routes = [
 >>>>>>> 30dc309 (chore: Update router index.js)
 =======
 >>>>>>> 8bfa38e (feat: Update router index.js)
+=======
+        ],
+    },
+>>>>>>> b33330e (chore: Update router index.js)
     { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
 
