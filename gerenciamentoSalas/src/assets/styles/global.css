@@ -17,6 +17,9 @@
 body {
     font-family: Arial, sans-serif;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c90d471 (styles: Update style global.css)
     background: linear-gradient(135deg, #388e3c 0%, #f9f9f9 60%, #ccc 100%);
     color: #333;
     margin: 0;
@@ -33,8 +36,11 @@ p, h1, h2, h3, h4, h5, h6 {
 html, body {
     height: 100%;
     width: 100%;
+<<<<<<< HEAD
 }
 =======
     background-color: #f7f7f7;
+=======
+>>>>>>> c90d471 (styles: Update style global.css)
 }
 >>>>>>> d7369e8 (styles: update global.css)
