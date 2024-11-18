@@ -27,13 +27,8 @@
       <!-- Exibição dos cards de salas e laboratórios -->
       <div class="card-carousel">
         <div v-if="filteredItems.length" class="carousel-container">
-          <ItemCard
-            v-for="item in filteredItems"
-            :key="item.id"
-            :item="item"
-            :type="item.tipo"
-            @itemDeleted="handleItemDeleted"
-          />  
+          <ItemCard v-for="item in filteredItems" :key="item.id" :item="item" :type="item.tipo"
+            @itemDeleted="handleItemDeleted" />
         </div>
         <div v-else>
           <p>Nenhum recurso encontrado.</p>
