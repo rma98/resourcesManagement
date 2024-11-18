@@ -63,6 +63,9 @@ export default {
   display: flex;
   flex-direction: column;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f119fd6 (feat: Update component MainLayout.vue)
   min-height: 100vh;
   /* Define o mínimo como altura total da tela */
 }
@@ -70,7 +73,10 @@ export default {
 main {
   flex-grow: 1;
   /* Faz com que o conteúdo principal ocupe o espaço disponível */
+<<<<<<< HEAD
 =======
 >>>>>>> bb3adb8 (feat: add MainLayout.vue)
+=======
+>>>>>>> f119fd6 (feat: Update component MainLayout.vue)
 }
 </style>
