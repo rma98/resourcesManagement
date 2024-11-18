@@ -19,7 +19,8 @@
 >>>>>>> 6fa0b04 (chore: atualizações gerais de dependências e melhorias na Home.vue)
     "axios": "^1.7.7",
     "vue": "^3.4.21",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
