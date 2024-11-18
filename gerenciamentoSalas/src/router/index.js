@@ -9,10 +9,14 @@ import Login from '../views/Login.vue';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2a24f52 (chore: Update router index.js)
 import AddRecurso from '../views/AddRecurso.vue';
 import EditRecurso from '../views/EditRecurso.vue';
 =======
 >>>>>>> 30dc309 (chore: Update router index.js)
+<<<<<<< HEAD
 =======
 import AddRecurso from '../views/AddRecurso.vue';
 import EditRecurso from '../views/EditRecurso.vue';
@@ -23,6 +27,8 @@ import EditRecurso from '../views/EditRecurso.vue';
 import AddRecurso from '../views/AddRecurso.vue';
 import EditRecurso from '../views/EditRecurso.vue';
 >>>>>>> a3bc501 (feat: Update router index.js)
+=======
+>>>>>>> 2a24f52 (chore: Update router index.js)
 
 const routes = [
     {
@@ -36,20 +42,27 @@ const routes = [
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 8bfa38e (feat: Update router index.js)
 =======
 >>>>>>> a3bc501 (feat: Update router index.js)
+=======
+>>>>>>> 2a24f52 (chore: Update router index.js)
             { path: '/add-recurso', name: 'AddRecurso', component: AddRecurso, meta: { requiresAuth: true }, },
         ],
     },
     { path: '/editar-recurso/:tipo/:id', name: 'EditRecurso', component: EditRecurso, meta: { requiresAuth: true }, },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2a24f52 (chore: Update router index.js)
 =======
         ],
     },
 >>>>>>> 30dc309 (chore: Update router index.js)
+<<<<<<< HEAD
 =======
 >>>>>>> 8bfa38e (feat: Update router index.js)
 =======
@@ -58,6 +71,8 @@ const routes = [
 >>>>>>> b33330e (chore: Update router index.js)
 =======
 >>>>>>> a3bc501 (feat: Update router index.js)
+=======
+>>>>>>> 2a24f52 (chore: Update router index.js)
     { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
 
