@@ -11,6 +11,7 @@ import Login from '../views/Login.vue';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2a24f52 (chore: Update router index.js)
 =======
@@ -38,6 +39,10 @@ import EditRecurso from '../views/EditRecurso.vue';
 >>>>>>> 2a24f52 (chore: Update router index.js)
 =======
 >>>>>>> 5427510 (feat: Update router index.js)
+=======
+import AddRecurso from '../views/AddRecurso.vue';
+import EditRecurso from '../views/EditRecurso.vue';
+>>>>>>> 6c3affc (fix: Resolve conflitos no arquivo index.js)
 
 const routes = [
     {
@@ -53,6 +58,7 @@ const routes = [
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 8bfa38e (feat: Update router index.js)
 =======
@@ -63,10 +69,13 @@ const routes = [
 =======
 >>>>>>> 8bfa38e (feat: Update router index.js)
 >>>>>>> 5427510 (feat: Update router index.js)
+=======
+>>>>>>> 6c3affc (fix: Resolve conflitos no arquivo index.js)
             { path: '/add-recurso', name: 'AddRecurso', component: AddRecurso, meta: { requiresAuth: true }, },
         ],
     },
     { path: '/editar-recurso/:tipo/:id', name: 'EditRecurso', component: EditRecurso, meta: { requiresAuth: true }, },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -95,6 +104,8 @@ const routes = [
 =======
 >>>>>>> 8bfa38e (feat: Update router index.js)
 >>>>>>> 5427510 (feat: Update router index.js)
+=======
+>>>>>>> 6c3affc (fix: Resolve conflitos no arquivo index.js)
     { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
 
