@@ -81,6 +81,7 @@
   <!-- Sidebar -->
   <nav class="sidebar" :class="{ active: sidebarVisible }" id="sidebar">
     <ul>
+<<<<<<< HEAD
       <li><router-link to="/" @click="$emit('closeSidebar')"><i class="fas fa-home fa-2x"></i> Home</router-link></li>
       <li><router-link to="/view-room" @click="$emit('closeSidebar')"><i class="fas fa-door-open fa-2x"></i> Visualizar Salas</router-link></li>
       <li><router-link to="/view-lab" @click="$emit('closeSidebar')"><i class="fas fa-flask fa-2x"></i> Visualizar Laboratórios</router-link></li>
@@ -89,6 +90,50 @@
       <li id="loginMenu"><a href="#"><i class="fas fa-user-circle fa-2x"></i> Login</a></li>
       <li id="registerMenu"><a href="#"><i class="fas fa-user-plus fa-2x"></i> Cadastro</a></li>
 >>>>>>> e6cddd3 (feat: update Sidebar.vue)
+=======
+      <li>
+        <router-link to="/" @click="$emit('closeSidebar')"
+          ><i class="fas fa-home fa-2x"></i> Home</router-link
+        >
+      </li>
+      <!-- <li>
+        <router-link to="/view-room" @click="$emit('closeSidebar')"
+          ><i class="fas fa-door-open fa-2x"></i> Visualizar Salas</router-link
+        >
+      </li>
+      <li>
+        <router-link to="/view-lab" @click="$emit('closeSidebar')"
+          ><i class="fas fa-flask fa-2x"></i> Visualizar
+          Laboratórios</router-link
+        >
+      </li> -->
+      <li v-if="isCoordinator">
+        <router-link to="/add-recurso" @click="$emit('closeSidebar')"
+          ><i class="fas fa-plus fa-2x"></i> Adicionar Recurso</router-link
+        >
+      </li>
+      <li id="loginMenu">
+        <router-link to="/login" @click="$emit('closeSidebar')"
+          ><i class="fas fa-user-circle fa-2x"></i> Login</router-link
+        >
+      </li>
+      <li id="registerMenu">
+        <router-link to="/register" @click="$emit('closeSidebar')"
+          ><i class="fas fa-user-plus fa-2x"></i> Cadastro</router-link
+        >
+      </li>
+      <li v-if="isLoggedIn">
+        <router-link to="/perfil" @click="$emit('closeSidebar')"
+          ><i class="fas fa-user fa-2x"></i> Perfil</router-link
+        >
+      </li>
+      <!-- Renderiza o botão 'Sair' apenas se o usuário estiver logado -->
+      <li v-if="isLoggedIn">
+        <button @click="logoutAndClose" class="logout-button">
+          <i class="fas fa-sign-out-alt fa-2x"></i> Sair
+        </button>
+      </li>
+>>>>>>> 6d7d76a (feat: Update component Sidebar.vue)
     </ul>
   </nav>
 </template>
@@ -118,6 +163,7 @@ export default {
     logoutAndClose() {
       this.logout(); // Executa o logout
       this.$emit("closeSidebar"); // Emite o evento para fechar a sidebar
+<<<<<<< HEAD
 =======
   props: ["isLoggedIn"],
 =======
@@ -167,6 +213,9 @@ export default {
 =======
     sidebarVisible: Boolean, // Recebe a propriedade para controlar a visibilidade
 >>>>>>> e6cddd3 (feat: update Sidebar.vue)
+=======
+    },
+>>>>>>> 6d7d76a (feat: Update component Sidebar.vue)
   },
 };
 </script>
@@ -182,12 +231,15 @@ export default {
 <<<<<<< HEAD
   background-color: #388e3c;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+<<<<<<< HEAD
 =======
   background-color: #388e3c; /* Cor de fundo da sidebar */
 >>>>>>> 1d8af65 (feat: atualiza componente Sidebar.vue)
 =======
   background-color: #388e3c;
 >>>>>>> e6cddd3 (feat: update Sidebar.vue)
+=======
+>>>>>>> 6d7d76a (feat: Update component Sidebar.vue)
   transition: right 0.3s;
   z-index: 100;
 }
@@ -239,11 +291,14 @@ export default {
   border: none;
   color: white;
   cursor: pointer;
+<<<<<<< HEAD
 =======
   color: white; /* Cor dos ícones */
 >>>>>>> 1d8af65 (feat: atualiza componente Sidebar.vue)
 =======
   color: white;
 >>>>>>> e6cddd3 (feat: update Sidebar.vue)
+=======
+>>>>>>> 6d7d76a (feat: Update component Sidebar.vue)
 }
 </style>
