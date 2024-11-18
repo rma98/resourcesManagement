@@ -13,7 +13,7 @@
 <script>
 import Header from "../components/Header.vue";
 import Sidebar from "../components/Sidebar.vue";
-import Footer from "../components/Footer.vue";
+import Footer from '../components/Footer.vue';
 
 export default {
   components: {
@@ -32,7 +32,7 @@ export default {
     },
     closeSidebar() {
       this.sidebarVisible = false; // Fecha a sidebar
-    },
+    }
   },
 };
 </script>
@@ -41,12 +41,10 @@ export default {
 .main-layout {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  /* Define o mínimo como altura total da tela */
+  min-height: 100vh; /* Define o mínimo como altura total da tela */
 }
 
 main {
-  flex-grow: 1;
-  /* Faz com que o conteúdo principal ocupe o espaço disponível */
+  flex-grow: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
 }
 </style>
