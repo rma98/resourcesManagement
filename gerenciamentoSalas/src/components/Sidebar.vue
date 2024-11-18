@@ -3,30 +3,42 @@
   <nav class="sidebar" :class="{ active: sidebarVisible }" id="sidebar">
     <ul>
       <li>
-        <router-link to="/" @click="$emit('closeSidebar')">
-          <i class="fas fa-home fa-2x"></i> Home
-        </router-link>
+        <router-link to="/" @click="$emit('closeSidebar')"
+          ><i class="fas fa-home fa-2x"></i> Home</router-link
+        >
       </li>
+      <!-- <li>
+        <router-link to="/view-room" @click="$emit('closeSidebar')"
+          ><i class="fas fa-door-open fa-2x"></i> Visualizar Salas</router-link
+        >
+      </li>
+      <li>
+        <router-link to="/view-lab" @click="$emit('closeSidebar')"
+          ><i class="fas fa-flask fa-2x"></i> Visualizar
+          Laboratórios</router-link
+        >
+      </li> -->
       <li v-if="isCoordinator">
-        <router-link to="/add-recurso" @click="$emit('closeSidebar')">
-          <i class="fas fa-plus fa-2x"></i> Adicionar Recurso
-        </router-link>
+        <router-link to="/add-recurso" @click="$emit('closeSidebar')"
+          ><i class="fas fa-plus fa-2x"></i> Adicionar Recurso</router-link
+        >
       </li>
       <li id="loginMenu">
-        <router-link to="/login" @click="$emit('closeSidebar')">
-          <i class="fas fa-user-circle fa-2x"></i> Login
-        </router-link>
+        <router-link to="/login" @click="$emit('closeSidebar')"
+          ><i class="fas fa-user-circle fa-2x"></i> Login</router-link
+        >
       </li>
       <li id="registerMenu">
-        <router-link to="/register" @click="$emit('closeSidebar')">
-          <i class="fas fa-user-plus fa-2x"></i> Cadastro
-        </router-link>
+        <router-link to="/register" @click="$emit('closeSidebar')"
+          ><i class="fas fa-user-plus fa-2x"></i> Cadastro</router-link
+        >
       </li>
       <li v-if="isLoggedIn">
-        <router-link to="/perfil" @click="$emit('closeSidebar')">
-          <i class="fas fa-user fa-2x"></i> Perfil
-        </router-link>
+        <router-link to="/perfil" @click="$emit('closeSidebar')"
+          ><i class="fas fa-user fa-2x"></i> Perfil</router-link
+        >
       </li>
+      <!-- Renderiza o botão 'Sair' apenas se o usuário estiver logado -->
       <li v-if="isLoggedIn">
         <button @click="logoutAndClose" class="logout-button">
           <i class="fas fa-sign-out-alt fa-2x"></i> Sair
@@ -44,8 +56,9 @@ export default {
     sidebarVisible: Boolean,
   },
   computed: {
+    // Computed property para verificar se o usuário está logado
     ...mapState({
-      isLoggedIn: (state) => !!state.user.name,
+      isLoggedIn: (state) => !!state.user.name, // Considera logado se o nome de usuário existir
     }),
     isCoordinator() {
       return (
@@ -56,8 +69,8 @@ export default {
   methods: {
     ...mapActions(["logout"]),
     logoutAndClose() {
-      this.logout();
-      this.$emit("closeSidebar");
+      this.logout(); // Executa o logout
+      this.$emit("closeSidebar"); // Emite o evento para fechar a sidebar
     },
   },
 };
