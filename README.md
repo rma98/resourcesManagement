@@ -1,61 +1,63 @@
-# Projeto Gerenciamento de Salas e Laboratórios
+# ResourcesManagement (Gerenciamento de Recursos)
 
-O projeto **Gerenciamento de Salas e Laboratórios** é uma aplicação web desenvolvida com Vue.js e Spring Boot para gerenciar salas e laboratórios em uma instituição de ensino. A aplicação permite o cadastro, visualização, edição e remoção de salas, laboratórios e recursos adicionais, bem como o gerenciamento de reservas.
+O **ResourcesManagement** é uma aplicação web desenvolvida com **Vue.js** e **Spring Boot** para gerenciar salas, laboratórios e recursos adicionais em uma instituição de ensino. A aplicação oferece funcionalidades específicas para coordenadores, professores e alunos, promovendo uma experiência personalizada baseada no tipo de usuário.
+
+## Visão Geral
+
+Ao acessar a aplicação pela primeira vez, o usuário está deslogado. Nesse estado, ele pode:
+
+- Navegar pelo menu com as opções: **Início**, **Cadastrar**, e **Login**.
+- Visualizar salas, laboratórios e recursos disponíveis.
+
+Para acessar funcionalidades avançadas, como reservar, editar ou remover salas e laboratórios, o usuário precisa realizar o cadastro e login.
+
+### Permissões por Tipo de Usuário
+
+- **Coordenador**:
+  - Reservar salas ou laboratórios.
+  - Editar e remover recursos.
+- **Professor**:
+  - Reservar salas ou laboratórios.
+  - Não pode editar nem remover recursos.
+- **Aluno**:
+  - Funcionalidades específicas em desenvolvimento.
+- **Usuário Deslogado**:
+  - Acesso limitado à visualização de recursos.
+
+### Funcionalidades Dinâmicas
+
+Quando um usuário está logado, o sistema exibe funcionalidades adicionais no menu, como:
+- **Perfil do Usuário**.
+- **Sair**.
+- Funcionalidades exclusivas baseadas no tipo do usuário.
 
 ## Funcionalidades
 
-- **Login e Cadastro**: Acesso seguro à aplicação com diferentes tipos de usuários.
-- **Home**: Visualização de salas e laboratórios.
-- **Adicionar Salas e Laboratórios**: Inclusão de novas salas e laboratórios no sistema.
-- **Recursos Adicionais**: Gerenciamento de recursos que podem ser alocados em salas e laboratórios.
-- **Salas e Laboratórios**: Visualização, edição e remoção de salas e laboratórios.
+- **Login e Cadastro**: Acesso seguro com tipos de usuários específicos.
+- **Visualização de Recursos**: Salas, laboratórios e recursos disponíveis.
+- **Gerenciamento de Recursos**:
+  - Adição, edição e exclusão de salas e laboratórios (somente coordenadores).
+- **Reservas**: Realização de reservas para salas e laboratórios.
 
-## Tela de Login
+## Exemplos de Páginas
 
-![Tela de Login](./docs/login.png)
+### Página Inicial (Usuário Deslogado)
 
-A página de login permite que os usuários se autentiquem no sistema.
+![Página Inicial Deslogado](./docs/deslogado.png)
 
-## Tela de Cadastro
+A tela inicial exibe os recursos disponíveis (salas e laboratórios) para visualização.
 
-![Tela de Cadastro](./docs/cadastro.png)
+### Página Inicial (Usuário Logado)
 
-A página de cadastro permite adicionar novos usuários ao sistema.
+![Página Inicial Logado](./docs/logado.png)
 
-## Página Inicial
-
-![Página Inicial](./docs/home.png)
-
-A página inicial exibe uma lista de salas e laboratórios com seus respectivos status.
-
-## Adicionar Salas e Laboratórios
-
-![Adicionar Salas](./docs/adicionar-salas.png)
-
-![Adicionar Laboratórios](./docs/adicionar-laboratorios.png)
-
-Aqui você pode adicionar novas salas e laboratórios ao sistema.
-
-## Recursos Adicionais
-
-![Recursos Adicionais](./docs/recursos-adicionais.png)
-
-Gerencie recursos adicionais disponíveis para as salas e laboratórios.
-
-## Como Rodar o Projeto
-
-### Requisitos
-
-- Node.js
-- npm
-- Java JDK
-- Spring Boot
+Após o login, o menu e as funcionalidades são adaptados ao tipo de usuário, permitindo ações específicas.
 
 ### Configuração do Frontend
 
 1. Navegue até o diretório do frontend:
    ```bash
-   cd gerenciamentoSalasFrontend
+   cd https://github.com/rma98/resourcesManagement.git
 2. Instale as dependências:
    ```bash
    npm install
@@ -64,7 +66,7 @@ Gerencie recursos adicionais disponíveis para as salas e laboratórios.
 
 1. Navegue até o diretório do backend:
    ```bash
-   cd gerenciamentoSalasBackend
+   cd https://github.com/rma98/backend.git
 2. Execute o projeto com Maven:
    ```bash
    ./mvnw spring-boot:run
@@ -105,4 +107,4 @@ Gerencie recursos adicionais disponíveis para as salas e laboratórios.
 
 ### Licença
 
-Este projeto está licenciado sob a Licença MIT.
+Este projeto visa facilitar o gerenciamento de recursos em instituições de ensino, garantindo acesso seguro e organizado com base nas permissões do usuário. Este projeto está licenciado sob a Licença MIT.
