@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { useStore } from 'vuex'; // Importa o Vuex para verificar o login
+import MainLayout from "../layouts/MainLayout.vue";
 
 const routes = [
     {
