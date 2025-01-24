@@ -16,18 +16,17 @@ const routes = [
         path: '/',
         component: MainLayout,
         children: [
-            
+            { path: '', name: 'Home', component: Home, },
+            { path: '/login', name: 'Login', component: Login },
+            { path: '/register-aluno', name: 'RegisterAluno', component: RegisterAluno },
+            { path: '/register-coordenador', name: 'RegisterCoordenador', component: RegisterCoordenador },
+            { path: '/register-professor', name: 'RegisterProfessor', component: RegisterProfessor },
+            { path: '/contato', name: 'Contato', component: Contato },
+            { path: '/perguntas-frequentes', name: 'Faq', component: Faq },
+            { path: '/sobre-equipe', name: 'SobreEquipe', component: SobreEquipe },
+            { path: '/saiba-mais', name: 'SaibaMais', component: SaibaMais },
         ]
     },
-    { path: '', name: 'Home', component: Home, },
-    { path: '/login', name: 'Login', component: Login },
-    { path: '/register-aluno', name: 'RegisterAluno', component: RegisterAluno },
-    { path: '/register-coordenador', name: 'RegisterCoordenador', component: RegisterCoordenador },
-    { path: '/register-professor', name: 'RegisterProfessor', component: RegisterProfessor },
-    { path: '/contato', name: 'Contato', component: Contato },
-    { path: '/perguntas-frequentes', name: 'Faq', component: Faq },
-    { path: '/sobre-equipe', name: 'SobreEquipe', component: SobreEquipe },
-    { path: '/saiba-mais', name: 'SaibaMais', component: SaibaMais },
     { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
 
