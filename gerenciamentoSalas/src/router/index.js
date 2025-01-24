@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { useStore } from 'vuex'; // Importa o Vuex para verificar o login
 import MainLayout from "../layouts/MainLayout.vue";
+import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
 import RegisterAluno from '../views/RegisterAluno.vue';
 import RegisterCoordenador from '../views/RegisterCoordenador.vue';
@@ -17,6 +18,7 @@ const routes = [
             
         ]
     },
+    { path: '', name: 'Home', component: Home, },
     { path: '/login', name: 'Login', component: Login },
     { path: '/register-aluno', name: 'RegisterAluno', component: RegisterAluno },
     { path: '/register-coordenador', name: 'RegisterCoordenador', component: RegisterCoordenador },
