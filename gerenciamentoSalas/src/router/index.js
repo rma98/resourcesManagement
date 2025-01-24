@@ -9,6 +9,7 @@ import RegisterProfessor from '../views/RegisterProfessor.vue';
 import Faq from '../views/Faq.vue';
 import Contato from '../views/Contato.vue';
 import SobreEquipe from '../views/SobreEquipe.vue';
+import SaibaMais from '../views/SaibaMais.vue';
 
 const routes = [
     {
@@ -26,6 +27,7 @@ const routes = [
     { path: '/contato', name: 'Contato', component: Contato },
     { path: '/perguntas-frequentes', name: 'Faq', component: Faq },
     { path: '/sobre-equipe', name: 'SobreEquipe', component: SobreEquipe },
+    { path: '/saiba-mais', name: 'SaibaMais', component: SaibaMais },
     { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
 
