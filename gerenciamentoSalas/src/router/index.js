@@ -2,6 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 import { useStore } from 'vuex'; // Importa o Vuex para verificar o login
 
 const routes = [
+    {
+        path: '/',
+        component: MainLayout,
+        children: []
+    },
     { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
 
