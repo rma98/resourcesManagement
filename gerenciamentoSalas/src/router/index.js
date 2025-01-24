@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { useStore } from 'vuex'; // Importa o Vuex para verificar o login
 import MainLayout from "../layouts/MainLayout.vue";
+import Contato from '../views/Contato.vue';
 import SobreEquipe from '../views/SobreEquipe.vue';
 
 const routes = [
@@ -11,6 +12,7 @@ const routes = [
             
         ]
     },
+    { path: '/contato', name: 'Contato', component: Contato },
     { path: '/sobre-equipe', name: 'SobreEquipe', component: SobreEquipe },
     { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
