@@ -78,7 +78,7 @@ Após o login, funcionalidades específicas baseadas no tipo de usuário são ex
    ```
 2. Acesse o diretório do frontend:
    ```bash
-   cd gerenciamentoSalasFrontend
+   cd gerenciamentoSalas
    ```
 3. Instale as dependências:
    ```bash
@@ -97,7 +97,7 @@ Após o login, funcionalidades específicas baseadas no tipo de usuário são ex
    ```
 2. Acesse o diretório do backend:
    ```bash
-   cd gerenciamentoSalasBackend
+   cd backend
    ```
 3. Execute o projeto com Maven:
    ```bash
