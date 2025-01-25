@@ -6,6 +6,7 @@ import Login from '../views/Login.vue';
 import RegisterAluno from '../views/RegisterAluno.vue';
 import RegisterCoordenador from '../views/RegisterCoordenador.vue';
 import RegisterProfessor from '../views/RegisterProfessor.vue';
+import ImportantDates from '../views/ImportantDates.vue';
 import Faq from '../views/Faq.vue';
 import Contato from '../views/Contato.vue';
 import SobreEquipe from '../views/SobreEquipe.vue';
@@ -21,6 +22,7 @@ const routes = [
             { path: '/register-aluno', name: 'RegisterAluno', component: RegisterAluno },
             { path: '/register-coordenador', name: 'RegisterCoordenador', component: RegisterCoordenador },
             { path: '/register-professor', name: 'RegisterProfessor', component: RegisterProfessor },
+            { path: '/important-dates', name: 'ImportantDates', component: ImportantDates, meta: { requiresAuth: true }, },
             { path: '/contato', name: 'Contato', component: Contato },
             { path: '/perguntas-frequentes', name: 'Faq', component: Faq },
             { path: '/sobre-equipe', name: 'SobreEquipe', component: SobreEquipe },
