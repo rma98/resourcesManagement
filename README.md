@@ -57,7 +57,7 @@ A aplicação possui duas formas de interação principais:
 
 ![Página Inicial Deslogado](./docs/deslogado.png)
 
-A página inicial exibe recursos disponíveis para visualização e opções como **Login**, **Cadastrar**, **Perguntas Frequentes** e **Sobre**.
+A página inicial exibe recursos disponíveis para visualização e opções como **Login**, **Cadastrar**, **Perguntas Frequentes**, **Contato** e **Sobre**.
 
 ### Dashboard (Usuário Logado)
 
