@@ -124,6 +124,10 @@ Após o login, funcionalidades específicas baseadas no tipo de usuário são ex
 |-- README.md
 ```
 
+## Repositório Relacionado
+
+Você também pode acessar o repositório [Backend](https://github.com/rma98/backend.git) para ver o código do servidor.
+
 ## Contribuição
 
 1. Faça um fork do repositório.
