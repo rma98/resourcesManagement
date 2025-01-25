@@ -3,6 +3,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+import './assets/styles/cardStyles.css';
 import './assets/styles/global.css';
 
 import '@fortawesome/fontawesome-free/css/all.css';
