@@ -20,6 +20,7 @@ import ResouceManagement from '../views/ResouceManagement.vue';
 import ApproveReserva from '../views/ApproveReserva.vue';
 import ApproveUser from '../views/ApproveUser.vue';
 import UsuariosList from '../views/UsuariosList.vue';
+import VerificarEmail from '../views/VerificarEmail.vue';
 
 const routes = [
     {
@@ -40,6 +41,7 @@ const routes = [
             { path: '/saiba-mais', name: 'SaibaMais', component: SaibaMais },
             { path: '/approveReserva/:id', name: 'ApproveReserva', component: ApproveReserva },
             { path: '/approve/:id', name: 'ApproveUser', component: ApproveUser },
+            { path: '/verificar-email', name: 'VerificarEmail', component: VerificarEmail },
             { path: '/dashboard', name: 'Dashboard', component: Dashboard, meta: { requiresAuth: true }, },
             { path: '/add-recurso', name: 'AddRecurso', component: AddRecurso, meta: { requiresAuth: true }, },
             { path: '/recursos', name: 'Recursos', component: ResouceManagement, meta: { requiresAuth: true }, },
