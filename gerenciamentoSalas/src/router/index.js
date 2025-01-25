@@ -3,6 +3,7 @@ import { useStore } from 'vuex'; // Importa o Vuex para verificar o login
 import MainLayout from "../layouts/MainLayout.vue";
 import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
+import ForgotPassword from '../views/ForgotPassword.vue';
 import RegisterAluno from '../views/RegisterAluno.vue';
 import RegisterCoordenador from '../views/RegisterCoordenador.vue';
 import RegisterProfessor from '../views/RegisterProfessor.vue';
@@ -19,6 +20,7 @@ const routes = [
         children: [
             { path: '', name: 'Home', component: Home, },
             { path: '/login', name: 'Login', component: Login },
+            { path: '/esqueceu-senha', name: 'EsqueceuSenha', component: ForgotPassword },
             { path: '/register-aluno', name: 'RegisterAluno', component: RegisterAluno },
             { path: '/register-coordenador', name: 'RegisterCoordenador', component: RegisterCoordenador },
             { path: '/register-professor', name: 'RegisterProfessor', component: RegisterProfessor },
