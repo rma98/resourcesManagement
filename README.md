@@ -4,40 +4,52 @@ O **ResourcesManagement** é uma aplicação web desenvolvida com **Vue.js** e *
 
 ## Visão Geral
 
-Ao acessar a aplicação pela primeira vez, o usuário está deslogado. Nesse estado, ele pode:
+### Comportamento do Sistema
 
-- Navegar pelo menu com as opções: **Início**, **Cadastrar**, e **Login**.
-- Visualizar salas, laboratórios e recursos disponíveis.
+A aplicação possui duas formas de interação principais:
 
-Para acessar funcionalidades avançadas, como reservar, editar ou remover salas e laboratórios, o usuário precisa realizar o cadastro e login.
+1. **Usuário Deslogado**:
+   - Página inicial (Home) para visualização de recursos como salas, laboratórios e outros itens.
+   - Acesso às páginas:
+     - **Início**
+     - **Perguntas Frequentes**
+     - **Contato**
+     - **Sobre**
+     - **Login**
+     - **Cadastrar**
+     - **Esqueceu a senha** (recuperação de conta).
+
+2. **Usuário Logado**:
+   - Redirecionado ao **Dashboard**, onde funcionalidades específicas são exibidas com base no tipo de usuário.
+   - Acesso às páginas:
+     - **Dashboard**
+     - **Feriados e Eventos**
+     - **Sair** (logout).
 
 ### Permissões por Tipo de Usuário
 
 - **Coordenador**:
-  - Reservar salas ou laboratórios.
-  - Editar e remover recursos.
+  - Acesso a todas as funcionalidades, incluindo adição, edição e remoção de recursos.
+  - Realização de reservas.
 - **Professor**:
-  - Reservar salas ou laboratórios.
-  - Não pode editar nem remover recursos.
+  - Pode visualizar e realizar reservas de salas ou laboratórios.
+  - Não pode adicionar, editar ou remover recursos.
 - **Aluno**:
-  - Funcionalidades específicas em desenvolvimento.
+  - Pode visualizar recursos.
+  - Solicitar reservas de salas ou laboratórios (aguardando aprovação de um coordenador).
 - **Usuário Deslogado**:
-  - Acesso limitado à visualização de recursos.
-
-### Funcionalidades Dinâmicas
-
-Quando um usuário está logado, o sistema exibe funcionalidades adicionais no menu, como:
-- **Perfil do Usuário**.
-- **Sair**.
-- Funcionalidades exclusivas baseadas no tipo do usuário.
+  - Visualização limitada de recursos.
 
 ## Funcionalidades
 
-- **Login e Cadastro**: Acesso seguro com tipos de usuários específicos.
-- **Visualização de Recursos**: Salas, laboratórios e recursos disponíveis.
-- **Gerenciamento de Recursos**:
-  - Adição, edição e exclusão de salas e laboratórios (somente coordenadores).
-- **Reservas**: Realização de reservas para salas e laboratórios.
+- **Login e Cadastro**: Sistema de autenticação com tipos de usuários definidos.
+- **Visualização de Recursos**: Lista de salas, laboratórios e outros itens disponíveis.
+- **Gerenciamento de Recursos** (somente coordenadores):
+  - Adição, edição e exclusão de salas e laboratórios.
+- **Reservas**:
+  - Coordenadores e professores podem realizar reservas diretamente.
+  - Alunos podem solicitar reservas, sujeitas a aprovação.
+- **Recuperação de Senha**: Opção para redefinir senha ao informar e-mail cadastrado.
 
 ## Exemplos de Páginas
 
@@ -45,66 +57,92 @@ Quando um usuário está logado, o sistema exibe funcionalidades adicionais no m
 
 ![Página Inicial Deslogado](./docs/deslogado.png)
 
-A tela inicial exibe os recursos disponíveis (salas e laboratórios) para visualização.
+A página inicial exibe recursos disponíveis para visualização e opções como **Login**, **Cadastrar** e **Esqueceu a Senha**.
 
-### Página Inicial (Usuário Logado)
+### Dashboard (Usuário Logado)
 
-![Página Inicial Logado](./docs/logado.png)
+![Dashboard Logado](./docs/logado.png)
 
-Após o login, o menu e as funcionalidades são adaptados ao tipo de usuário, permitindo ações específicas.
+Após o login, funcionalidades específicas baseadas no tipo de usuário são exibidas, como:
+- Gerenciamento de recursos (coordenador).
+- Realização de reservas (coordenador e professor).
+- Solicitação de reservas (aluno).
 
-### Configuração do Frontend
+## Configuração do Projeto
 
-1. Navegue até o diretório do frontend:
+### Frontend
+
+1. Clone o repositório do frontend:
    ```bash
-   cd https://github.com/rma98/resourcesManagement.git
-2. Instale as dependências:
+   git clone https://github.com/rma98/resourcesManagement.git
+   ```
+2. Acesse o diretório do frontend:
+   ```bash
+   cd gerenciamentoSalasFrontend
+   ```
+3. Instale as dependências:
    ```bash
    npm install
-
-### Configuração do Backend
-
-1. Navegue até o diretório do backend:
+   ```
+4. Inicie o servidor de desenvolvimento:
    ```bash
-   cd https://github.com/rma98/backend.git
-2. Execute o projeto com Maven:
+   npm run serve
+   ```
+
+### Backend
+
+1. Clone o repositório do backend:
+   ```bash
+   git clone https://github.com/rma98/backend.git
+   ```
+2. Acesse o diretório do backend:
+   ```bash
+   cd gerenciamentoSalasBackend
+   ```
+3. Execute o projeto com Maven:
    ```bash
    ./mvnw spring-boot:run
+   ```
 
-### Estrutura de Diretórios
+## Estrutura de Diretórios
 
-/gerenciamentoSalas
-|-- /gerenciamentoSalasFrontend
+```
+/resourcesManagement
+|-- /gerenciamentoSalas
 |   |-- /src
 |   |   |-- /components
 |   |   |-- /views
 |   |   |-- /assets
 |   |-- /public
 |   |-- package.json
-|-- /gerenciamentoSalasBackend
+|-- /backend
 |   |-- /src
 |   |   |-- /main
 |   |   |   |-- /java
 |   |   |   |-- /resources
 |   |-- pom.xml
 |-- README.md
+```
 
-### Contribuição
+## Contribuição
 
 1. Faça um fork do repositório.
 2. Crie uma branch para sua feature:
    ```bash
-   ./mvnw spring-boot:run
+   git checkout -b minha-feature
+   ```
 3. Faça suas alterações e teste.
 4. Commit suas alterações:
    ```bash
    git add .
    git commit -m "feat: adicionar nova funcionalidade"
+   ```
 5. Faça push para sua branch:
    ```bash
    git push origin minha-feature
+   ```
 6. Abra um Pull Request.
 
-### Licença
+## Licença
 
-Este projeto visa facilitar o gerenciamento de recursos em instituições de ensino, garantindo acesso seguro e organizado com base nas permissões do usuário. Este projeto está licenciado sob a Licença MIT.
+Este projeto está licenciado sob a Licença MIT. Ele visa facilitar o gerenciamento de recursos em instituições de ensino, promovendo uma experiência organizada e segura para os usuários.
