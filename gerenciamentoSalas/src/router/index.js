@@ -19,6 +19,7 @@ import EditRecurso from '../views/EditRecurso.vue';
 import ResouceManagement from '../views/ResouceManagement.vue';
 import ApproveReserva from '../views/ApproveReserva.vue';
 import ApproveUser from '../views/ApproveUser.vue';
+import UsuariosList from '../views/UsuariosList.vue';
 
 const routes = [
     {
@@ -42,6 +43,7 @@ const routes = [
             { path: '/dashboard', name: 'Dashboard', component: Dashboard, meta: { requiresAuth: true }, },
             { path: '/add-recurso', name: 'AddRecurso', component: AddRecurso, meta: { requiresAuth: true }, },
             { path: '/recursos', name: 'Recursos', component: ResouceManagement, meta: { requiresAuth: true }, },
+            { path: '/usuarios', name: 'Usuarios', component: UsuariosList, meta: { requiresAuth: true }, },
         ]
     },
     { path: '/editar-recurso/:tipo/:id', name: 'EditRecurso', component: EditRecurso, meta: { requiresAuth: true }, },
