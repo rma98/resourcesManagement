@@ -13,6 +13,7 @@ import Faq from '../views/Faq.vue';
 import Contato from '../views/Contato.vue';
 import SobreEquipe from '../views/SobreEquipe.vue';
 import SaibaMais from '../views/SaibaMais.vue';
+import Dashboard from '../views/Dashboard.vue';
 
 const routes = [
     {
@@ -31,6 +32,7 @@ const routes = [
             { path: '/perguntas-frequentes', name: 'Faq', component: Faq },
             { path: '/sobre-equipe', name: 'SobreEquipe', component: SobreEquipe },
             { path: '/saiba-mais', name: 'SaibaMais', component: SaibaMais },
+            { path: '/dashboard', name: 'Dashboard', component: Dashboard, meta: { requiresAuth: true }, },
         ]
     },
     { path: '/:pathMatch(.*)*', redirect: '/' }
