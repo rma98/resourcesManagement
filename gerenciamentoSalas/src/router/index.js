@@ -4,6 +4,7 @@ import MainLayout from "../layouts/MainLayout.vue";
 import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
 import ForgotPassword from '../views/ForgotPassword.vue';
+import ResetPassword from '../views/ResetPassword.vue';
 import RegisterAluno from '../views/RegisterAluno.vue';
 import RegisterCoordenador from '../views/RegisterCoordenador.vue';
 import RegisterProfessor from '../views/RegisterProfessor.vue';
@@ -20,6 +21,7 @@ const routes = [
             { path: '', name: 'Home', component: Home, },
             { path: '/login', name: 'Login', component: Login },
             { path: '/esqueceu-senha', name: 'EsqueceuSenha', component: ForgotPassword },
+            { path: '/redefinir-senha', name: 'ResetPassword ', component: ResetPassword },
             { path: '/register-aluno', name: 'RegisterAluno', component: RegisterAluno },
             { path: '/register-coordenador', name: 'RegisterCoordenador', component: RegisterCoordenador },
             { path: '/register-professor', name: 'RegisterProfessor', component: RegisterProfessor },
