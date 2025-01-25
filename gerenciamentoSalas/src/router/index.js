@@ -14,6 +14,9 @@ import Contato from '../views/Contato.vue';
 import SobreEquipe from '../views/SobreEquipe.vue';
 import SaibaMais from '../views/SaibaMais.vue';
 import Dashboard from '../views/Dashboard.vue';
+import AddRecurso from '../views/AddRecurso.vue';
+import EditRecurso from '../views/EditRecurso.vue';
+import ResouceManagement from '../views/ResouceManagement.vue';
 
 const routes = [
     {
@@ -33,8 +36,11 @@ const routes = [
             { path: '/sobre-equipe', name: 'SobreEquipe', component: SobreEquipe },
             { path: '/saiba-mais', name: 'SaibaMais', component: SaibaMais },
             { path: '/dashboard', name: 'Dashboard', component: Dashboard, meta: { requiresAuth: true }, },
+            { path: '/add-recurso', name: 'AddRecurso', component: AddRecurso, meta: { requiresAuth: true }, },
+            { path: '/recursos', name: 'Recursos', component: ResouceManagement, meta: { requiresAuth: true }, },
         ]
     },
+    { path: '/editar-recurso/:tipo/:id', name: 'EditRecurso', component: EditRecurso, meta: { requiresAuth: true }, },
     { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
 
