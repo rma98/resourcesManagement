@@ -17,6 +17,8 @@ import Dashboard from '../views/Dashboard.vue';
 import AddRecurso from '../views/AddRecurso.vue';
 import EditRecurso from '../views/EditRecurso.vue';
 import ResouceManagement from '../views/ResouceManagement.vue';
+import ApproveReserva from '../views/ApproveReserva.vue';
+import ApproveUser from '../views/ApproveUser.vue';
 
 const routes = [
     {
@@ -35,6 +37,8 @@ const routes = [
             { path: '/perguntas-frequentes', name: 'Faq', component: Faq },
             { path: '/sobre-equipe', name: 'SobreEquipe', component: SobreEquipe },
             { path: '/saiba-mais', name: 'SaibaMais', component: SaibaMais },
+            { path: '/approveReserva/:id', name: 'ApproveReserva', component: ApproveReserva },
+            { path: '/approve/:id', name: 'ApproveUser', component: ApproveUser },
             { path: '/dashboard', name: 'Dashboard', component: Dashboard, meta: { requiresAuth: true }, },
             { path: '/add-recurso', name: 'AddRecurso', component: AddRecurso, meta: { requiresAuth: true }, },
             { path: '/recursos', name: 'Recursos', component: ResouceManagement, meta: { requiresAuth: true }, },
