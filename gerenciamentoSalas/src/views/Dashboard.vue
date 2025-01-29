@@ -17,9 +17,15 @@
                     </router-link>
                 </div>
 
-                <div v-if="isProfessor || isCoordinator || isAluno">
+                <div v-if="isProfessor || isCoordinator">
                     <router-link to="/recursos" class="button">
                         <i class="fas fa-calendar-check icon"></i> Reservar Recurso
+                    </router-link>
+                </div>
+
+                <div v-if="isAluno">
+                    <router-link to="/recursos" class="button">
+                        <i class="fas fa-calendar-plus icon"></i> Solicitar Recurso
                     </router-link>
                 </div>
 
