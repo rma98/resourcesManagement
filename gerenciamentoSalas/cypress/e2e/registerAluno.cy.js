@@ -20,8 +20,6 @@ describe("Cadastro de Aluno", () => {
 
         // Clica no botão para enviar o formulário
         cy.get("button.btn").click();
-
-        // Assumir que o cadastro foi realizado corretamente e não verificar a mensagem de sucesso
     });
     
     it("Deve exibir erro ao tentar cadastrar com email inválido", () => {
