@@ -9,13 +9,13 @@
                 <div class="input-group">
                     <label for="name"><i class="fas fa-user"></i> Nome Completo</label>
                     <input type="text" v-model="formData.nome" @input="validateNome"
-                        placeholder="Digite seu nome completo" required />
+                        placeholder="Digite seu nome completo" />
                     <p v-if="errors.nome" class="error-message">{{ errors.nome }}</p>
                 </div>
                 <div class="input-group">
                     <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                    <input type="email" v-model="formData.email" @input="validateEmail" placeholder="Digite seu email"
-                        required />
+                    <input type="email" v-model="formData.email" @input="validateEmail"
+                        placeholder="Digite seu email" />
                     <p class="info-message">Certifique-se de informar um e-mail válido ao qual você tenha acesso.</p>
                     <p v-if="errors.email" class="error-message">{{ errors.email }}</p>
                 </div>
@@ -23,7 +23,7 @@
                     <label for="password"><i class="fas fa-lock"></i> Senha</label>
                     <div class="password-container">
                         <input :type="showPassword ? 'text' : 'password'" id="password" v-model="formData.senha"
-                            @input="validateSenha" placeholder="Digite sua senha" required />
+                            @input="validateSenha" placeholder="Digite sua senha" />
                         <button type="button" class="toggle-password" @click="togglePasswordVisibility">
                             <i :class="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
                         </button>
@@ -32,14 +32,13 @@
                 </div>
                 <div class="input-group">
                     <label for="type"><i class="fas fa-user-tag"></i> Tipo</label>
-                    <select v-model="formData.tipo" @change="validateTipo" required disabled>
+                    <select v-model="formData.tipo" @change="validateTipo" disabled>
                         <option value="ALUNO">Aluno</option>
                     </select>
                     <p v-if="errors.tipo" class="error-message">{{ errors.tipo }}</p>
                 </div>
-                <button :disabled="isFormInvalid || isSubmitting" type="submit" class="btn">
-                    <span v-if="isSubmitting">Cadastrando...</span>
-                    <span v-else>Cadastrar</span>
+                <button :disabled="isSubmitting" type="submit" class="btn">
+                    Cadastrar
                 </button>
 
                 <!-- Mensagem de feedback -->
@@ -89,49 +88,55 @@ export default {
             showPassword: false,
         };
     },
-    computed: {
-        isFormInvalid() {
-            return (
-                this.errors.nome ||
-                this.errors.email ||
-                this.errors.senha ||
-                this.errors.tipo
-            );
-        },
-    },
     methods: {
         togglePasswordVisibility() {
             this.showPassword = !this.showPassword;
         },
         validateNome() {
             const nome = this.formData.nome.trim();
+
+            // Verifica se o nome não está vazio
             if (!nome) {
                 this.errors.nome = "O nome completo é obrigatório.";
-            } else if (nome.split(" ").length < 2) {
+            }
+            // Verifica o comprimento do nome
+            else if (nome.length > 100) {
+                this.errors.nome = "O nome não pode ultrapassar 100 caracteres.";
+            }
+            // Verifica se tem pelo menos nome e sobrenome
+            else if (nome.split(" ").length < 2) {
                 this.errors.nome = "Informe pelo menos nome e sobrenome.";
-            } else {
-                this.errors.nome = null;
+            }
+            else {
+                this.errors.nome = null;  // Nenhum erro
             }
         },
         async validateEmail() {
             const email = this.formData.email.trim();
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailsCadastrados = ["robson.albuquerque@example.com"]; // Simulação de emails já cadastrados
+
             if (!email) {
                 this.errors.email = "O email é obrigatório.";
             } else if (!emailRegex.test(email)) {
                 this.errors.email = "O formato do email é inválido.";
+            } else if (emailsCadastrados.includes(email)) {
+                this.errors.email = "Este email já está em uso.";
             } else {
                 this.errors.email = null;
             }
         },
         validateSenha() {
             const senha = this.formData.senha;
-            const senhaRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            const senhaRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
             if (!senha) {
                 this.errors.senha = "A senha é obrigatória.";
+            } else if (senha.length < 8) {
+                this.errors.senha = "A senha deve ter no mínimo 8 caracteres.";
             } else if (!senhaRegex.test(senha)) {
                 this.errors.senha =
-                    "A senha deve ter no mínimo 8 caracteres, incluindo uma letra, um número e um caractere especial.";
+                    "A senha deve conter pelo menos uma letra maiúscula, um número e um caractere especial.";
             } else {
                 this.errors.senha = null;
             }
@@ -145,18 +150,24 @@ export default {
             }
         },
         async handleSubmit() {
+            // Realiza as validações manualmente
             this.validateNome();
             await this.validateEmail();
             this.validateSenha();
             this.validateTipo();
 
-            if (this.isFormInvalid) return;
+            // Checa se há algum erro após as validações
+            if (this.errors.nome || this.errors.email || this.errors.senha || this.errors.tipo) {
+                return; // Impede o envio se houver erros
+            }
 
             this.isSubmitting = true;
 
             try {
+                // Envia a solicitação para cadastrar o usuário
                 const response = await axios.post("http://localhost:8080/api/auth/register", this.formData);
 
+                // Se o cadastro for bem-sucedido
                 if (response.status === 201) {
                     this.success = true;
                     this.message = "Usuário cadastrado com sucesso! Aguarde a aprovação do administrador para acessar o sistema.";
@@ -165,6 +176,7 @@ export default {
                     }, 5000);
                 }
             } catch (error) {
+                // Tratar erros da API
                 if (error.response && error.response.data) {
                     if (error.response.data.message) {
                         this.message = error.response.data.message; // Erro vindo da API
@@ -220,6 +232,7 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
 /* Header */
@@ -296,6 +309,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
 }
 
 .btn:hover {
@@ -375,6 +389,10 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .form-wrapper {
+        margin-top: 20px;
+    }
+
     .video-wrapper {
         height: 40vh;
     }
@@ -386,7 +404,7 @@ body {
     }
 
     .video-wrapper {
-        height: 30vh;
+        display: none;
     }
 }
 </style>
