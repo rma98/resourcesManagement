@@ -8,7 +8,7 @@
             </div>
             <div class="input-group">
                 <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                <input type="email" v-model="email" placeholder="Digite seu email" @input="validateEmail" required />
+                <input type="email" v-model="email" placeholder="Digite seu email" @input="validateEmail" />
                 <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
                 <p v-if="successMessage" class="success-message">{{ successMessage }}</p>
             </div>
